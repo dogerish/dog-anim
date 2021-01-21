@@ -1,6 +1,9 @@
 # matrix class (1 dimensional)
 class Matrix:
-    def __init__(self, *array): self.__array = list(array)
+    def __init__(self, *array):
+        self.__array = []
+        # so that you only have to change the setitem and append functions to initialize correctly
+        for item in array: self.append(item)
 
     # to iterable
     def __iter__(self): return iter(self.__array)
